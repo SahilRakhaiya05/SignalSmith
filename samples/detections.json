@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Payment Outage",
+    "spl": "index=$INDEX$ service=\"payment-service\" (level=\"ERROR\" OR http_status>=500) scenario=\"payment_outage\""
+  },
+  {
+    "name": "High HTTP Error Rate",
+    "spl": "index=$INDEX$ http_status>=500"
+  },
+  {
+    "name": "Slow Payment Requests",
+    "spl": "index=$INDEX$ service=\"payment-service\" duration_ms>=1500"
+  },
+  {
+    "name": "Credential Stuffing",
+    "spl": "index=$INDEX$ scenario=\"credential_stuffing\" OR (service=\"auth-service\" event_type=\"failed_login\" http_status=401)"
+  },
+  {
+    "name": "Privileged User Login Anomaly",
+    "spl": "index=$INDEX$ is_privileged=true service=\"auth-service\" event_type=\"login\""
+  }
+]

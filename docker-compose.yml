@@ -1,0 +1,55 @@
+services:
+  splunk:
+    image: splunk/splunk:latest
+    hostname: splunk
+    environment:
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_PASSWORD=${SPLUNK_PASSWORD:-changeme123}
+      - SPLUNK_HEC_TOKEN=${SPLUNK_HEC_TOKEN:-signalsmith-hec-token}
+    ports:
+      - "${SPLUNK_WEB_PORT:-8000}:8000"
+      - "${SPLUNK_API_PORT:-8089}:8089"
+      - "${SPLUNK_HEC_PORT:-8088}:8088"
+    volumes:
+      - splunk-data:/opt/splunk/var
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 120s
+
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    environment:
+      - SPLUNK_HOST=splunk
+      - SPLUNK_API_PORT=8089
+      - SPLUNK_HEC_PORT=8088
+      - SPLUNK_USERNAME=${SPLUNK_USERNAME:-admin}
+      - SPLUNK_PASSWORD=${SPLUNK_PASSWORD:-changeme123}
+      - SPLUNK_HEC_TOKEN=${SPLUNK_HEC_TOKEN:-signalsmith-hec-token}
+      - SPLUNK_BASELINE_INDEX=${SPLUNK_BASELINE_INDEX:-signalsmith_baseline}
+      - SPLUNK_CANDIDATE_INDEX=${SPLUNK_CANDIDATE_INDEX:-signalsmith_candidate}
+      - SPLUNK_MCP_URL=${SPLUNK_MCP_URL:-}
+      - SIGNALSMITH_MODE=${SIGNALSMITH_MODE:-auto}
+    volumes:
+      - backend-data:/app/data
+    depends_on:
+      splunk:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: ${VITE_API_URL:-http://localhost:8080}
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  splunk-data:
+  backend-data:

@@ -1,0 +1,52 @@
+{
+  "detections": [
+    {
+      "id": "high_error_rate",
+      "name": "High Error Rate (Any Service)",
+      "description": "Elevated ERROR-level events across any application index",
+      "spl_template": "index=$INDEX$ level=ERROR",
+      "importance": "critical",
+      "trigger_threshold": 10
+    },
+    {
+      "id": "brute_force_login",
+      "name": "Brute Force Login Attempts",
+      "description": "Multiple failed authentication events — security SOC use case",
+      "spl_template": "index=$INDEX$ action=failure OR status=401 OR event_type=failed_login",
+      "importance": "critical",
+      "trigger_threshold": 5
+    },
+    {
+      "id": "slow_api_latency",
+      "name": "Slow API Response Time",
+      "description": "Application performance — requests exceeding SLA threshold",
+      "spl_template": "index=$INDEX$ duration_ms>=2000 OR response_time>=2",
+      "importance": "high",
+      "trigger_threshold": 3
+    },
+    {
+      "id": "kubernetes_pod_crash",
+      "name": "Kubernetes Pod Crash Loop",
+      "description": "Infrastructure / platform ops — container restart storms",
+      "spl_template": "index=$INDEX$ sourcetype=kube*:events reason=CrashLoopBackOff OR message=*Back-off*",
+      "importance": "high",
+      "trigger_threshold": 1
+    },
+    {
+      "id": "network_firewall_deny",
+      "name": "Firewall Deny Spike",
+      "description": "NetOps — unusual volume of denied connections",
+      "spl_template": "index=$INDEX$ action=deny OR action=blocked",
+      "importance": "medium",
+      "trigger_threshold": 20
+    },
+    {
+      "id": "windows_failed_logon",
+      "name": "Windows Failed Logon (ES)",
+      "description": "Enterprise Security style detection — Windows auth failures",
+      "spl_template": "index=$INDEX$ EventCode=4625 OR EventID=4625",
+      "importance": "critical",
+      "trigger_threshold": 5
+    }
+  ]
+}
