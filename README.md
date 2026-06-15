@@ -1,4 +1,4 @@
-# SignalSmith AI
+**SignalSmith AI**
 
 **Cut Splunk ingest cost without cutting incident coverage.**
 
@@ -13,7 +13,7 @@ Works with **any Splunk workload**: application logs, security alerts, Kubernete
 
 **Built for:** [Splunk Agentic Ops Hackathon](https://splunk.devpost.com/) — Observability · Security · Platform & Developer Experience
 
-![SignalSmith system architecture](signalsmith_architecture.svg)
+<img width="1200" height="2315" alt="SignalSmith system architecture" src="https://github.com/user-attachments/assets/f93493ea-fd61-48f1-bb9a-eb5a91d9bb44" />
 
 ---
 
@@ -400,50 +400,6 @@ REST API served at `http://localhost:8080/api/`. Interactive docs at `/docs`.
 | `/health` | GET | Application health check |
 
 Authentication: Splunk credentials via `X-Splunk-User` and `X-Splunk-Pass` headers after UI login.
-
----
-
-## Project structure
-
-```
-signalsmith-ai/
-├── signalsmith_architecture.svg  # System architecture diagram (repo root)
-├── architecture.svg              # Same diagram (Devpost alias)
-├── LICENSE                   # Apache 2.0
-├── README.md                 # This file
-├── .env.example              # Environment template
-│
-├── backend/
-│   ├── app/
-│   │   ├── agents/           # Pipeline agents (discovery → revision)
-│   │   ├── api/              # FastAPI routes
-│   │   ├── models/           # Pydantic data models
-│   │   └── services/         # Splunk, MCP, Mentor, storage, orchestration
-│   ├── requirements.txt
-│   └── tests/                # 43 pytest cases
-│
-├── frontend/
-│   └── src/                  # React dashboard
-│
-├── config/
-│   ├── detections.example.json   # Custom SPL templates
-│   └── README.md                 # Custom detection guide
-│
-├── samples/
-│   ├── demo_baseline_events.json # Sample telemetry (250 events)
-│   └── detections.json           # Sample SPL templates
-│
-├── scripts/
-│   ├── setup.ps1 / setup.sh      # Install dependencies
-│   ├── start.ps1 / start.sh      # Build and start application
-│   └── install_mcp.ps1           # Splunk MCP Server installer
-│
-└── docs/
-    ├── ARCHITECTURE.md       # System design and data flow
-    ├── SPLUNK_SETUP.md       # Splunk and MCP configuration
-    ├── TECHNICAL_DESIGN.md   # Components and testing strategy
-    └── SECURITY.md           # Governance and credentials
-```
 
 ---
 
