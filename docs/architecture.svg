@@ -1,492 +1,346 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1350" font-family="Segoe UI, system-ui, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1520" font-family="Segoe UI, system-ui, Arial, sans-serif">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0b1220"/>
-      <stop offset="100%" stop-color="#1a2332"/>
+      <stop offset="100%" stop-color="#162032"/>
     </linearGradient>
-    <linearGradient id="fe" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="blue" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#2563eb"/>
       <stop offset="100%" stop-color="#1d4ed8"/>
     </linearGradient>
-    <linearGradient id="be" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="teal" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#0d9488"/>
       <stop offset="100%" stop-color="#0f766e"/>
     </linearGradient>
-    <linearGradient id="sp" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="orange" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#ea580c"/>
       <stop offset="100%" stop-color="#c2410c"/>
     </linearGradient>
-    <linearGradient id="ai" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="purple" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#8b5cf6"/>
       <stop offset="100%" stop-color="#6d28d9"/>
     </linearGradient>
-    <linearGradient id="gov" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#15803d"/>
-      <stop offset="100%" stop-color="#166534"/>
-    </linearGradient>
-    <filter id="shadow" x="-4%" y="-4%" width="108%" height="108%">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.35"/>
+    <filter id="shadow" x="-6%" y="-6%" width="112%" height="112%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.4"/>
     </filter>
-    <marker id="arr-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <marker id="a-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0,10 3.5,0 7" fill="#60a5fa"/>
     </marker>
-    <marker id="arr-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <marker id="a-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0,10 3.5,0 7" fill="#34d399"/>
     </marker>
-    <marker id="arr-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <marker id="a-orange" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0,10 3.5,0 7" fill="#fb923c"/>
     </marker>
-    <marker id="arr-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+    <marker id="a-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0,10 3.5,0 7" fill="#a78bfa"/>
     </marker>
   </defs>
 
-  <!-- Background -->
-  <rect width="1800" height="1350" fill="url(#bg)"/>
-
-  <!-- Header -->
-  <text x="900" y="44" text-anchor="middle" fill="#f8fafc" font-size="30" font-weight="700">SignalSmith AI — System Architecture</text>
-  <text x="900" y="72" text-anchor="middle" fill="#94a3b8" font-size="14">Agentic Splunk telemetry optimization · Shadow validation · MCP Server · Human-governed OTel export</text>
-
-  <!-- Track badges -->
-  <rect x="520" y="86" width="130" height="24" rx="12" fill="#1e3a5f" stroke="#3b82f6"/>
-  <text x="585" y="102" text-anchor="middle" fill="#93c5fd" font-size="10" font-weight="600">Observability</text>
-  <rect x="660" y="86" width="90" height="24" rx="12" fill="#3b1f1f" stroke="#ef4444"/>
-  <text x="705" y="102" text-anchor="middle" fill="#fca5a5" font-size="10" font-weight="600">Security</text>
-  <rect x="760" y="86" width="160" height="24" rx="12" fill="#2e1f4a" stroke="#a78bfa"/>
-  <text x="840" y="102" text-anchor="middle" fill="#c4b5fd" font-size="10" font-weight="600">Platform &amp; Dev Experience</text>
-  <rect x="930" y="86" width="150" height="24" rx="12" fill="#431407" stroke="#f97316"/>
-  <text x="1005" y="102" text-anchor="middle" fill="#fdba74" font-size="10" font-weight="600">Splunk MCP Server</text>
-
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- LAYER 1: PRESENTATION TIER                                      -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <text x="40" y="138" fill="#64748b" font-size="11" font-weight="700" letter-spacing="1">PRESENTATION TIER</text>
-
-  <rect x="40" y="150" width="320" height="72" rx="10" fill="#334155" stroke="#64748b" stroke-width="1.5" filter="url(#shadow)"/>
-  <text x="200" y="178" text-anchor="middle" fill="#f1f5f9" font-size="14" font-weight="600">Security / Platform Operator</text>
-  <text x="200" y="198" text-anchor="middle" fill="#94a3b8" font-size="11">Browser · localhost:8080 · Splunk credential login</text>
-  <text x="200" y="214" text-anchor="middle" fill="#64748b" font-size="10">X-Splunk-User / X-Splunk-Pass on every API call</text>
-
-  <line x1="360" y1="186" x2="390" y2="186" stroke="#60a5fa" stroke-width="2.5" marker-end="url(#arr-blue)"/>
-
-  <rect x="390" y="130" width="500" height="210" rx="14" fill="#111827" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
-  <text x="410" y="158" fill="#93c5fd" font-size="13" font-weight="700">REACT DASHBOARD · Vite + TypeScript</text>
-
-  <rect x="410" y="168" width="145" height="38" rx="7" fill="url(#fe)"/>
-  <text x="482" y="185" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">SessionContext</text>
-  <text x="482" y="198" text-anchor="middle" fill="#bfdbfe" font-size="8">Pipeline state · job progress · live refresh</text>
-
-  <rect x="565" y="168" width="145" height="38" rx="7" fill="url(#fe)"/>
-  <text x="637" y="185" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">REST Client</text>
-  <text x="637" y="198" text-anchor="middle" fill="#bfdbfe" font-size="8">/api/* · SSE job stream · health checks</text>
-
-  <rect x="720" y="168" width="150" height="38" rx="7" fill="url(#fe)"/>
-  <text x="795" y="185" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">Splunk Auth Gate</text>
-  <text x="795" y="198" text-anchor="middle" fill="#bfdbfe" font-size="8">sessionStorage · login/logout flow</text>
-
-  <!-- UI views grid -->
-  <rect x="410" y="218" width="88" height="30" rx="5" fill="#1e293b" stroke="#475569"/>
-  <text x="454" y="237" text-anchor="middle" fill="#e2e8f0" font-size="9">Command Center</text>
-  <rect x="504" y="218" width="72" height="30" rx="5" fill="#1e293b" stroke="#475569"/>
-  <text x="540" y="237" text-anchor="middle" fill="#e2e8f0" font-size="9">Data Flow</text>
-  <rect x="582" y="218" width="68" height="30" rx="5" fill="#1e293b" stroke="#475569"/>
-  <text x="616" y="237" text-anchor="middle" fill="#e2e8f0" font-size="9">Pipeline</text>
-  <rect x="656" y="218" width="78" height="30" rx="5" fill="#1e293b" stroke="#475569"/>
-  <text x="695" y="237" text-anchor="middle" fill="#e2e8f0" font-size="9">Validation</text>
-  <rect x="740" y="218" width="62" height="30" rx="5" fill="#7c3aed" stroke="#a78bfa"/>
-  <text x="771" y="237" text-anchor="middle" fill="#ede9fe" font-size="9" font-weight="600">Mentor</text>
-  <rect x="808" y="218" width="68" height="30" rx="5" fill="#1e293b" stroke="#475569"/>
-  <text x="842" y="237" text-anchor="middle" fill="#e2e8f0" font-size="9">Approval</text>
-
-  <text x="410" y="278" fill="#64748b" font-size="9">Live charts · coverage tables · OTel YAML preview · MCP tool explorer · audit history</text>
-  <text x="410" y="294" fill="#64748b" font-size="9">Single-scroll Mentor chat · sticky composer · no duplicate progress panels</text>
-
-  <line x1="890" y1="235" x2="920" y2="235" stroke="#60a5fa" stroke-width="2.5" marker-end="url(#arr-blue)"/>
-
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- LAYER 2: APPLICATION TIER                                       -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <text x="920" y="138" fill="#64748b" font-size="11" font-weight="700" letter-spacing="1">APPLICATION TIER</text>
-
-  <rect x="920" y="150" width="840" height="300" rx="14" fill="#111827" stroke="#14b8a6" stroke-width="2" filter="url(#shadow)"/>
-  <text x="940" y="178" fill="#5eead4" font-size="13" font-weight="700">FASTAPI BACKEND · Python · Port 8080 (serves UI + API)</text>
-
-  <!-- API layer -->
-  <rect x="940" y="190" width="200" height="52" rx="8" fill="url(#be)"/>
-  <text x="1040" y="212" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">REST API Layer</text>
-  <text x="1040" y="228" text-anchor="middle" fill="#ccfbf1" font-size="9">/session · /analysis · /proposals</text>
-  <text x="1040" y="238" text-anchor="middle" fill="#ccfbf1" font-size="9">/validation · /ai · /mcp · /splunk</text>
-
-  <rect x="1155" y="190" width="200" height="52" rx="8" fill="url(#be)"/>
-  <text x="1255" y="212" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">AnalysisOrchestrator</text>
-  <text x="1255" y="228" text-anchor="middle" fill="#ccfbf1" font-size="9">Coordinates agent phases</text>
-  <text x="1255" y="238" text-anchor="middle" fill="#ccfbf1" font-size="9">POST /session/run · async jobs</text>
-
-  <rect x="1370" y="190" width="170" height="52" rx="8" fill="url(#be)"/>
-  <text x="1455" y="212" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Job Runner</text>
-  <text x="1455" y="228" text-anchor="middle" fill="#ccfbf1" font-size="9">SSE progress events</text>
-  <text x="1455" y="238" text-anchor="middle" fill="#ccfbf1" font-size="9">full-pipeline async mode</text>
-
-  <rect x="1555" y="190" width="185" height="52" rx="8" fill="#334155" stroke="#475569"/>
-  <text x="1647" y="212" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="600">Middleware + Auth</text>
-  <text x="1647" y="228" text-anchor="middle" fill="#94a3b8" font-size="9">Splunk credential resolver</text>
-  <text x="1647" y="238" text-anchor="middle" fill="#94a3b8" font-size="9">CORS · structured logging</text>
-
-  <!-- Integration services -->
-  <text x="940" y="268" fill="#94a3b8" font-size="10" font-weight="700">INTEGRATION SERVICES</text>
-
-  <rect x="940" y="278" width="118" height="44" rx="6" fill="#1e293b" stroke="#475569"/>
-  <text x="999" y="297" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">SplunkClient</text>
-  <text x="999" y="312" text-anchor="middle" fill="#64748b" font-size="8">REST · HEC · ingest</text>
-
-  <rect x="1066" y="278" width="118" height="44" rx="6" fill="#1e293b" stroke="#f97316" stroke-width="1.5"/>
-  <text x="1125" y="297" text-anchor="middle" fill="#fdba74" font-size="9" font-weight="600">MCPClient</text>
-  <text x="1125" y="312" text-anchor="middle" fill="#64748b" font-size="8">JSON-RPC tools/call</text>
-
-  <rect x="1192" y="278" width="118" height="44" rx="6" fill="#1e293b" stroke="#475569"/>
-  <text x="1251" y="297" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">MCPRestBridge</text>
-  <text x="1251" y="312" text-anchor="middle" fill="#64748b" font-size="8">API fallback mode</text>
-
-  <rect x="1318" y="278" width="118" height="44" rx="6" fill="#1e293b" stroke="#475569"/>
-  <text x="1377" y="297" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">SplunkDataService</text>
-  <text x="1377" y="312" text-anchor="middle" fill="#64748b" font-size="8">bootstrap export</text>
-
-  <rect x="1444" y="278" width="118" height="44" rx="6" fill="#1e293b" stroke="#475569"/>
-  <text x="1503" y="297" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">SplunkAnalytics</text>
-  <text x="1503" y="312" text-anchor="middle" fill="#64748b" font-size="8">live chart SPL</text>
-
-  <rect x="1570" y="278" width="118" height="44" rx="6" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="1629" y="297" text-anchor="middle" fill="#c4b5fd" font-size="9" font-weight="600">GeminiService</text>
-  <text x="1629" y="312" text-anchor="middle" fill="#64748b" font-size="8">Mentor + SPL gen</text>
-
-  <rect x="1696" y="278" width="44" height="44" rx="6" fill="#1e293b" stroke="#475569"/>
-  <text x="1718" y="297" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="600">OTel</text>
-  <text x="1718" y="312" text-anchor="middle" fill="#64748b" font-size="8">export</text>
-
-  <!-- Local storage -->
-  <text x="940" y="348" fill="#94a3b8" font-size="10" font-weight="700">LOCAL PERSISTENCE</text>
-  <rect x="940" y="358" width="200" height="78" rx="8" fill="#0f172a" stroke="#334155"/>
-  <text x="1040" y="378" text-anchor="middle" fill="#e2e8f0" font-size="10" font-weight="600">SQLite · signalsmith.db</text>
-  <text x="950" y="396" fill="#64748b" font-size="8">analyses · proposals · validations</text>
-  <text x="950" y="410" fill="#64748b" font-size="8">audit trail · session metadata</text>
-  <text x="950" y="424" fill="#64748b" font-size="8">approval records · job history</text>
-
-  <rect x="1155" y="358" width="200" height="78" rx="8" fill="#0f172a" stroke="#334155"/>
-  <text x="1255" y="378" text-anchor="middle" fill="#e2e8f0" font-size="10" font-weight="600">baseline_events.json</text>
-  <text x="1165" y="396" fill="#64748b" font-size="8">Up to 25k events from Splunk</text>
-  <text x="1165" y="410" fill="#64748b" font-size="8">bootstrap SPL export or generator</text>
-  <text x="1165" y="424" fill="#64748b" font-size="8">immutable source for analysis</text>
-
-  <rect x="1370" y="358" width="200" height="78" rx="8" fill="#0f172a" stroke="#334155"/>
-  <text x="1470" y="378" text-anchor="middle" fill="#e2e8f0" font-size="10" font-weight="600">candidate_events.json</text>
-  <text x="1380" y="396" fill="#64748b" font-size="8">Post-policy shadow dataset</text>
-  <text x="1380" y="410" fill="#64748b" font-size="8">PolicyEngine output only</text>
-  <text x="1380" y="424" fill="#64748b" font-size="8">ingested to candidate index</text>
-
-  <rect x="1585" y="358" width="155" height="78" rx="8" fill="#0f172a" stroke="#334155"/>
-  <text x="1662" y="378" text-anchor="middle" fill="#e2e8f0" font-size="10" font-weight="600">samples/</text>
-  <text x="1595" y="396" fill="#64748b" font-size="8">250 demo events</text>
-  <text x="1595" y="410" fill="#64748b" font-size="8">5 detection SPL templates</text>
-  <text x="1595" y="424" fill="#64748b" font-size="8">offline judge exploration</text>
-
-  <line x1="1340" y1="450" x2="1340" y2="478" stroke="#fb923c" stroke-width="2" marker-end="url(#arr-orange)"/>
-
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- LAYER 3: SPLUNK ENTERPRISE                                      -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <text x="920" y="492" fill="#64748b" font-size="11" font-weight="700" letter-spacing="1">SPLUNK ENTERPRISE TIER</text>
-
-  <rect x="920" y="504" width="840" height="248" rx="14" fill="#111827" stroke="#f97316" stroke-width="2" filter="url(#shadow)"/>
-  <text x="940" y="532" fill="#fdba74" font-size="13" font-weight="700">SPLUNK ENTERPRISE · Official MCP Server + REST + HEC</text>
-
-  <!-- Protocol endpoints -->
-  <rect x="940" y="544" width="155" height="58" rx="8" fill="url(#sp)"/>
-  <text x="1017" y="566" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">MCP Server</text>
-  <text x="1017" y="582" text-anchor="middle" fill="#ffedd5" font-size="9">:8090 /services/mcp</text>
-  <text x="1017" y="594" text-anchor="middle" fill="#ffedd5" font-size="8">JSON-RPC · tools/call · splunk_run_query</text>
-
-  <rect x="1108" y="544" width="140" height="58" rx="8" fill="url(#sp)"/>
-  <text x="1178" y="566" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">REST API</text>
-  <text x="1178" y="582" text-anchor="middle" fill="#ffedd5" font-size="9">:8089 / :8090</text>
-  <text x="1178" y="594" text-anchor="middle" fill="#ffedd5" font-size="8">oneshot jobs · index mgmt</text>
-
-  <rect x="1261" y="544" width="120" height="58" rx="8" fill="url(#sp)"/>
-  <text x="1321" y="566" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">HEC</text>
-  <text x="1321" y="582" text-anchor="middle" fill="#ffedd5" font-size="9">:8088 collector</text>
-  <text x="1321" y="594" text-anchor="middle" fill="#ffedd5" font-size="8">batch event POST</text>
-
-  <rect x="1394" y="544" width="120" height="58" rx="8" fill="url(#sp)"/>
-  <text x="1454" y="566" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Web UI</text>
-  <text x="1454" y="582" text-anchor="middle" fill="#ffedd5" font-size="9">:8005 dashboard</text>
-  <text x="1454" y="594" text-anchor="middle" fill="#ffedd5" font-size="8">saved search verify</text>
-
-  <rect x="1527" y="544" width="213" height="58" rx="8" fill="#292524" stroke="#78716c"/>
-  <text x="1633" y="562" text-anchor="middle" fill="#d6d3d1" font-size="10" font-weight="600">Connection modes</text>
-  <text x="1540" y="578" fill="#a8a29e" font-size="8">splunk_mcp — MCP initialize OK → primary path</text>
-  <text x="1540" y="592" fill="#a8a29e" font-size="8">splunk_api — MCPRestBridge → REST oneshot fallback</text>
-  <text x="1540" y="606" fill="#a8a29e" font-size="8">offline — local JSON replay when Splunk unreachable</text>
-
-  <!-- Indexes -->
-  <rect x="940" y="618" width="380" height="115" rx="10" fill="#431407" stroke="#fb923c" stroke-width="1.5"/>
-  <text x="1130" y="642" text-anchor="middle" fill="#fed7aa" font-size="12" font-weight="700">signalsmith_baseline</text>
-  <text x="950" y="662" fill="#fdba74" font-size="9">READ ONLY — production-equivalent telemetry, never modified in place</text>
-  <text x="950" y="678" fill="#a8a29e" font-size="8">① Bootstrap export (SPL → up to 25k events)  ② Validation baseline replay</text>
-  <text x="950" y="694" fill="#a8a29e" font-size="8">③ Live analytics charts  ④ Index volume metrics for Command Center</text>
-  <text x="950" y="714" fill="#78716c" font-size="8">Ingest via HEC or REST receiver during demo bootstrap</text>
-
-  <rect x="1340" y="618" width="400" height="115" rx="10" fill="#431407" stroke="#fb923c" stroke-width="1.5"/>
-  <text x="1540" y="642" text-anchor="middle" fill="#fed7aa" font-size="12" font-weight="700">signalsmith_candidate</text>
-  <text x="1350" y="662" fill="#fdba74" font-size="9">SHADOW INDEX — post-policy filtered telemetry for safe experimentation</text>
-  <text x="1350" y="678" fill="#a8a29e" font-size="8">① PolicyEngine output ingested here  ② Validation candidate replay</text>
-  <text x="1350" y="694" fill="#a8a29e" font-size="8">③ Tagged validation_source per run for isolated SPL counts</text>
-  <text x="1350" y="714" fill="#78716c" font-size="8">HTTP 200/201/204 accepted · no double-ingest on stream receiver</text>
-
-  <!-- Mentor box (left side) -->
-  <rect x="40" y="360" width="320" height="200" rx="14" fill="#111827" stroke="#a78bfa" stroke-width="2" filter="url(#shadow)"/>
-  <text x="60" y="388" fill="#c4b5fd" font-size="13" font-weight="700">SIGNALSMITH MENTOR · AI Layer</text>
-
-  <rect x="60" y="400" width="130" height="50" rx="8" fill="url(#ai)"/>
-  <text x="125" y="420" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">POST /api/ai/chat</text>
-  <text x="125" y="436" text-anchor="middle" fill="#ddd6fe" font-size="8">Pipeline coaching</text>
-  <text x="125" y="446" text-anchor="middle" fill="#ddd6fe" font-size="8">Session-aware answers</text>
-
-  <rect x="200" y="400" width="140" height="50" rx="8" fill="url(#ai)"/>
-  <text x="270" y="420" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">POST /api/ai/explain</text>
-  <text x="270" y="436" text-anchor="middle" fill="#ddd6fe" font-size="8">Policy reasoning</text>
-  <text x="270" y="446" text-anchor="middle" fill="#ddd6fe" font-size="8">Validation interpretation</text>
-
-  <rect x="60" y="460" width="280" height="82" rx="8" fill="#1e1b4b" stroke="#6366f1"/>
-  <text x="200" y="480" text-anchor="middle" fill="#e0e7ff" font-size="10" font-weight="600">SPL generation fallback chain</text>
-  <text x="70" y="498" fill="#a5b4fc" font-size="8">1. MCP generate_spl tool  →  2. GeminiService.generate_spl  →  3. Template SPL matchers</text>
-  <text x="70" y="514" fill="#94a3b8" font-size="8">Context injected: baseline counts, active proposal, validation results, index names</text>
-  <text x="70" y="530" fill="#94a3b8" font-size="8">UI label always "SignalSmith Mentor" — deterministic agents remain auditable</text>
-
-  <line x1="360" y1="460" x2="390" y2="350" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arr-purple)"/>
-
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- LAYER 4: AGENT PIPELINE (detailed)                              -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <rect x="40" y="580" width="860" height="200" rx="14" fill="#0f172a" stroke="#2dd4bf" stroke-width="1.5" filter="url(#shadow)"/>
-  <text x="60" y="610" fill="#5eead4" font-size="14" font-weight="700">MULTI-AGENT PIPELINE · Deterministic + Auditable</text>
-  <text x="60" y="628" fill="#64748b" font-size="10">Orchestrated by AnalysisOrchestrator · each agent writes audit records · human gates on policy + approval</text>
-
-  <!-- Agent cards with descriptions -->
-  <rect x="60" y="642" width="95" height="62" rx="6" fill="#134e4a" stroke="#2dd4bf"/>
-  <text x="107" y="660" text-anchor="middle" fill="#99f6e4" font-size="9" font-weight="700">1. Discovery</text>
-  <text x="107" y="674" text-anchor="middle" fill="#5eead4" font-size="7">Indexes · saved</text>
-  <text x="107" y="684" text-anchor="middle" fill="#5eead4" font-size="7">searches · export</text>
-  <text x="107" y="696" text-anchor="middle" fill="#64748b" font-size="7">phase: analyze</text>
-
-  <line x1="155" y1="673" x2="168" y2="673" stroke="#34d399" stroke-width="2" marker-end="url(#arr-green)"/>
-
-  <rect x="168" y="642" width="95" height="62" rx="6" fill="#134e4a" stroke="#2dd4bf"/>
-  <text x="215" y="660" text-anchor="middle" fill="#99f6e4" font-size="9" font-weight="700">2. Profiler</text>
-  <text x="215" y="674" text-anchor="middle" fill="#5eead4" font-size="7">Service · event</text>
-  <text x="215" y="684" text-anchor="middle" fill="#5eead4" font-size="7">noise quantification</text>
-  <text x="215" y="696" text-anchor="middle" fill="#64748b" font-size="7">phase: analyze</text>
-
-  <line x1="263" y1="673" x2="276" y2="673" stroke="#34d399" stroke-width="2" marker-end="url(#arr-green)"/>
-
-  <rect x="276" y="642" width="95" height="62" rx="6" fill="#134e4a" stroke="#2dd4bf"/>
-  <text x="323" y="660" text-anchor="middle" fill="#99f6e4" font-size="9" font-weight="700">3. Protection</text>
-  <text x="323" y="674" text-anchor="middle" fill="#5eead4" font-size="7">Detection-critical</text>
-  <text x="323" y="684" text-anchor="middle" fill="#5eead4" font-size="7">event mapping</text>
-  <text x="323" y="696" text-anchor="middle" fill="#64748b" font-size="7">phase: analyze</text>
-
-  <line x1="371" y1="673" x2="384" y2="673" stroke="#34d399" stroke-width="2" marker-end="url(#arr-green)"/>
-
-  <rect x="384" y="642" width="95" height="62" rx="6" fill="#134e4a" stroke="#2dd4bf"/>
-  <text x="431" y="660" text-anchor="middle" fill="#99f6e4" font-size="9" font-weight="700">4. PolicyGen</text>
-  <text x="431" y="674" text-anchor="middle" fill="#5eead4" font-size="7">Drop · sample ·</text>
-  <text x="431" y="684" text-anchor="middle" fill="#5eead4" font-size="7">preserve rules</text>
-  <text x="431" y="696" text-anchor="middle" fill="#fbbf24" font-size="7">human gate</text>
-
-  <line x1="479" y1="673" x2="492" y2="673" stroke="#34d399" stroke-width="2" marker-end="url(#arr-green)"/>
-
-  <rect x="492" y="642" width="95" height="62" rx="6" fill="#134e4a" stroke="#2dd4bf"/>
-  <text x="539" y="660" text-anchor="middle" fill="#99f6e4" font-size="9" font-weight="700">5. Engine</text>
-  <text x="539" y="674" text-anchor="middle" fill="#5eead4" font-size="7">Apply policies</text>
-  <text x="539" y="684" text-anchor="middle" fill="#5eead4" font-size="7">→ candidate JSON</text>
-  <text x="539" y="696" text-anchor="middle" fill="#64748b" font-size="7">phase: apply</text>
-
-  <line x1="587" y1="673" x2="600" y2="673" stroke="#34d399" stroke-width="2" marker-end="url(#arr-green)"/>
-
-  <rect x="600" y="642" width="95" height="62" rx="6" fill="#134e4a" stroke="#2dd4bf"/>
-  <text x="647" y="660" text-anchor="middle" fill="#99f6e4" font-size="9" font-weight="700">6. Validator</text>
-  <text x="647" y="674" text-anchor="middle" fill="#5eead4" font-size="7">SPL shadow replay</text>
-  <text x="647" y="684" text-anchor="middle" fill="#5eead4" font-size="7">baseline vs candidate</text>
-  <text x="647" y="696" text-anchor="middle" fill="#64748b" font-size="7">phase: validate</text>
-
-  <line x1="695" y1="673" x2="708" y2="673" stroke="#34d399" stroke-width="2" marker-end="url(#arr-green)"/>
-
-  <rect x="708" y="642" width="95" height="62" rx="6" fill="#134e4a" stroke="#2dd4bf"/>
-  <text x="755" y="660" text-anchor="middle" fill="#99f6e4" font-size="9" font-weight="700">7. Revision</text>
-  <text x="755" y="674" text-anchor="middle" fill="#5eead4" font-size="7">Auto-fix on FAIL</text>
-  <text x="755" y="684" text-anchor="middle" fill="#5eead4" font-size="7">re-validate loop</text>
-  <text x="755" y="696" text-anchor="middle" fill="#fbbf24" font-size="7">human gate</text>
-
-  <rect x="820" y="642" width="65" height="62" rx="6" fill="#4c1d95" stroke="#a78bfa"/>
-  <text x="852" y="664" text-anchor="middle" fill="#ede9fe" font-size="9" font-weight="700">Mentor</text>
-  <text x="852" y="678" text-anchor="middle" fill="#c4b5fd" font-size="7">Assist</text>
-  <text x="852" y="690" text-anchor="middle" fill="#c4b5fd" font-size="7">any phase</text>
-  <text x="852" y="700" text-anchor="middle" fill="#fbbf24" font-size="7">human gate</text>
-
-  <!-- Fail loop arrow -->
-  <path d="M 755 704 Q 755 730 647 730 Q 539 730 539 704" fill="none" stroke="#f87171" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-blue)"/>
-  <text x="647" y="748" text-anchor="middle" fill="#f87171" font-size="8">coverage regression → Revision → re-apply → re-validate</text>
-
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- LAYER 5: SHADOW VALIDATION (detailed)                           -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <rect x="40" y="800" width="860" height="200" rx="14" fill="#0f172a" stroke="#f97316" stroke-width="1.5" filter="url(#shadow)"/>
-  <text x="60" y="830" fill="#fdba74" font-size="14" font-weight="700">SHADOW VALIDATION · Core Innovation</text>
-  <text x="60" y="848" fill="#64748b" font-size="10">Proves detection coverage with real SPL hit counts — not stubbed pass/fail</text>
-
-  <!-- Validation flow diagram -->
-  <rect x="60" y="862" width="155" height="70" rx="8" fill="#431407" stroke="#fb923c"/>
-  <text x="137" y="884" text-anchor="middle" fill="#fed7aa" font-size="10" font-weight="600">Baseline Index</text>
-  <text x="137" y="900" text-anchor="middle" fill="#fdba74" font-size="8">signalsmith_baseline</text>
-  <text x="137" y="916" text-anchor="middle" fill="#a8a29e" font-size="8">original telemetry</text>
-
-  <rect x="240" y="862" width="155" height="70" rx="8" fill="#431407" stroke="#fb923c"/>
-  <text x="317" y="884" text-anchor="middle" fill="#fed7aa" font-size="10" font-weight="600">Candidate Index</text>
-  <text x="317" y="900" text-anchor="middle" fill="#fdba74" font-size="8">signalsmith_candidate</text>
-  <text x="317" y="916" text-anchor="middle" fill="#a8a29e" font-size="8">post-policy shadow</text>
-
-  <rect x="420" y="858" width="200" height="78" rx="8" fill="#1e293b" stroke="#14b8a6" stroke-width="1.5"/>
-  <text x="520" y="878" text-anchor="middle" fill="#5eead4" font-size="10" font-weight="600">ReplayValidator</text>
-  <text x="430" y="896" fill="#94a3b8" font-size="8">For each saved search:</text>
-  <text x="430" y="910" fill="#94a3b8" font-size="8">SPL + | stats count as count via MCP</text>
-  <text x="430" y="924" fill="#94a3b8" font-size="8">Compare baseline_hits vs candidate_hits</text>
-
-  <rect x="640" y="858" width="240" height="78" rx="8" fill="#14532d" stroke="#4ade80"/>
-  <text x="760" y="878" text-anchor="middle" fill="#bbf7d0" font-size="10" font-weight="600">Coverage Result</text>
-  <text x="650" y="896" fill="#86efac" font-size="8">PASS — candidate hits ≥ baseline hits per detection</text>
-  <text x="650" y="910" fill="#fca5a5" font-size="8">FAIL — protected events lost → trigger Revision Agent</text>
-  <text x="650" y="924" fill="#86efac" font-size="8">UI shows real numbers (e.g. 136/136) not 0/0</text>
-
-  <!-- 5 detections -->
-  <text x="60" y="960" fill="#94a3b8" font-size="10" font-weight="600">5 REPLAYED DETECTIONS</text>
-  <rect x="60" y="968" width="155" height="22" rx="4" fill="#292524" stroke="#57534e"/>
-  <text x="137" y="983" text-anchor="middle" fill="#d6d3d1" font-size="8">Payment Outage Detection</text>
-  <rect x="223" y="968" width="130" height="22" rx="4" fill="#292524" stroke="#57534e"/>
-  <text x="288" y="983" text-anchor="middle" fill="#d6d3d1" font-size="8">High HTTP Error Rate</text>
-  <rect x="361" y="968" width="140" height="22" rx="4" fill="#292524" stroke="#57534e"/>
-  <text x="431" y="983" text-anchor="middle" fill="#d6d3d1" font-size="8">Slow Payment Requests</text>
-  <rect x="509" y="968" width="145" height="22" rx="4" fill="#292524" stroke="#57534e"/>
-  <text x="581" y="983" text-anchor="middle" fill="#d6d3d1" font-size="8">Credential Stuffing Detection</text>
-  <rect x="662" y="968" width="175" height="22" rx="4" fill="#292524" stroke="#57534e"/>
-  <text x="749" y="983" text-anchor="middle" fill="#d6d3d1" font-size="8">Privileged User Login Anomaly</text>
-
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- LAYER 6: END-TO-END DATA FLOW                                   -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <rect x="920" y="770" width="840" height="230" rx="14" fill="#0f172a" stroke="#334155" stroke-width="1.5" filter="url(#shadow)"/>
-  <text x="940" y="800" fill="#e2e8f0" font-size="14" font-weight="700">END-TO-END SHADOW PIPELINE</text>
-  <text x="940" y="818" fill="#64748b" font-size="10">Single click POST /api/session/run orchestrates all phases with SSE progress</text>
-
-  <!-- 8 step flow -->
-  <rect x="930" y="832" width="88" height="48" rx="7" fill="#334155" stroke="#64748b"/>
-  <text x="974" y="852" text-anchor="middle" fill="#f1f5f9" font-size="9" font-weight="600">Bootstrap</text>
-  <text x="974" y="868" text-anchor="middle" fill="#94a3b8" font-size="7">SPL → JSON</text>
-  <line x1="1018" y1="856" x2="1032" y2="856" stroke="#34d399" stroke-width="2" marker-end="url(#arr-green)"/>
-
-  <rect x="1032" y="832" width="88" height="48" rx="7" fill="#334155" stroke="#64748b"/>
-  <text x="1076" y="852" text-anchor="middle" fill="#f1f5f9" font-size="9" font-weight="600">Analyze</text>
-  <text x="1076" y="868" text-anchor="middle" fill="#94a3b8" font-size="7">4 agents</text>
-  <line x1="1120" y1="856" x2="1134" y2="856" stroke="#34d399" stroke-width="2" marker-end="url(#arr-green)"/>
-
-  <rect x="1134" y="832" width="88" height="48" rx="7" fill="#334155" stroke="#64748b"/>
-  <text x="1178" y="852" text-anchor="middle" fill="#f1f5f9" font-size="9" font-weight="600">Apply</text>
-  <text x="1178" y="868" text-anchor="middle" fill="#94a3b8" font-size="7">policies</text>
-  <line x1="1222" y1="856" x2="1236" y2="856" stroke="#34d399" stroke-width="2" marker-end="url(#arr-green)"/>
-
-  <rect x="1236" y="832" width="88" height="48" rx="7" fill="#334155" stroke="#64748b"/>
-  <text x="1280" y="852" text-anchor="middle" fill="#f1f5f9" font-size="9" font-weight="600">Ingest</text>
-  <text x="1280" y="868" text-anchor="middle" fill="#94a3b8" font-size="7">candidate</text>
-  <line x1="1324" y1="856" x2="1338" y2="856" stroke="#34d399" stroke-width="2" marker-end="url(#arr-green)"/>
-
-  <rect x="1338" y="832" width="88" height="48" rx="7" fill="#334155" stroke="#64748b"/>
-  <text x="1382" y="852" text-anchor="middle" fill="#f1f5f9" font-size="9" font-weight="600">Validate</text>
-  <text x="1382" y="868" text-anchor="middle" fill="#94a3b8" font-size="7">SPL replay</text>
-  <line x1="1426" y1="856" x2="1440" y2="856" stroke="#34d399" stroke-width="2" marker-end="url(#arr-green)"/>
-
-  <rect x="1440" y="832" width="88" height="48" rx="7" fill="#334155" stroke="#64748b"/>
-  <text x="1484" y="852" text-anchor="middle" fill="#f1f5f9" font-size="9" font-weight="600">Revise</text>
-  <text x="1484" y="868" text-anchor="middle" fill="#94a3b8" font-size="7">if FAIL</text>
-  <line x1="1528" y1="856" x2="1542" y2="856" stroke="#34d399" stroke-width="2" marker-end="url(#arr-green)"/>
-
-  <rect x="1542" y="832" width="88" height="48" rx="7" fill="#334155" stroke="#64748b"/>
-  <text x="1586" y="852" text-anchor="middle" fill="#f1f5f9" font-size="9" font-weight="600">Approve</text>
-  <text x="1586" y="868" text-anchor="middle" fill="#94a3b8" font-size="7">human</text>
-  <line x1="1630" y1="856" x2="1644" y2="856" stroke="#34d399" stroke-width="2" marker-end="url(#arr-green)"/>
-
-  <rect x="1644" y="832" width="100" height="48" rx="7" fill="#14532d" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="1694" y="852" text-anchor="middle" fill="#bbf7d0" font-size="9" font-weight="600">OTel YAML</text>
-  <text x="1694" y="868" text-anchor="middle" fill="#86efac" font-size="7">collector export</text>
-
-  <!-- Governance box -->
-  <rect x="930" y="898" width="400" height="88" rx="10" fill="#052e16" stroke="#22c55e" stroke-width="1.5"/>
-  <text x="1130" y="920" text-anchor="middle" fill="#bbf7d0" font-size="11" font-weight="700">GOVERNANCE &amp; SAFETY</text>
-  <text x="940" y="938" fill="#86efac" font-size="8">No auto-deploy — human approval required before OTel export</text>
-  <text x="940" y="952" fill="#86efac" font-size="8">Full audit trail: every agent action logged to SQLite</text>
-  <text x="940" y="966" fill="#86efac" font-size="8">Production source indexes never modified — shadow-only pattern</text>
-  <text x="940" y="980" fill="#86efac" font-size="8">Rollback YAML generated alongside collector config</text>
-
-  <!-- API endpoints -->
-  <rect x="1345" y="898" width="405" height="88" rx="10" fill="#1e293b" stroke="#475569"/>
-  <text x="1547" y="920" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="700">KEY API ENDPOINTS</text>
-  <text x="1355" y="938" fill="#64748b" font-size="8" font-family="Consolas, monospace">POST /api/session/run · /session/bootstrap · /analysis/start</text>
-  <text x="1355" y="952" fill="#64748b" font-size="8" font-family="Consolas, monospace">POST /api/proposals/{id}/apply · /validation/{id}/run · /revise</text>
-  <text x="1355" y="966" fill="#64748b" font-size="8" font-family="Consolas, monospace">POST /api/ai/chat · /mcp/run-query · GET /splunk/analytics/live</text>
-  <text x="1355" y="980" fill="#64748b" font-size="8" font-family="Consolas, monospace">POST /api/proposals/{id}/approve · GET /export/otel · /export/rollback</text>
-
-  <!-- Footer legend -->
-  <rect x="40" y="1020" width="1720" height="300" rx="14" fill="#0b1220" stroke="#1e293b" stroke-width="1"/>
-  <text x="60" y="1050" fill="#e2e8f0" font-size="13" font-weight="700">ARCHITECTURE LEGEND &amp; DESIGN PRINCIPLES</text>
-
-  <!-- Legend columns -->
-  <text x="60" y="1080" fill="#93c5fd" font-size="10" font-weight="700">DATA FLOW</text>
-  <line x1="60" y1="1095" x2="100" y2="1095" stroke="#60a5fa" stroke-width="2.5" marker-end="url(#arr-blue)"/>
-  <text x="108" y="1099" fill="#94a3b8" font-size="9">REST API request (UI → Backend)</text>
-  <line x1="60" y1="1115" x2="100" y2="1115" stroke="#fb923c" stroke-width="2.5" marker-end="url(#arr-orange)"/>
-  <text x="108" y="1119" fill="#94a3b8" font-size="9">Splunk query / ingest</text>
-  <line x1="60" y1="1135" x2="100" y2="1135" stroke="#34d399" stroke-width="2.5" marker-end="url(#arr-green)"/>
-  <text x="108" y="1139" fill="#94a3b8" font-size="9">Pipeline phase progression</text>
-  <line x1="60" y1="1155" x2="100" y2="1155" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arr-purple)"/>
-  <text x="108" y="1159" fill="#94a3b8" font-size="9">AI / Mentor assist (optional)</text>
-
-  <text x="400" y="1080" fill="#5eead4" font-size="10" font-weight="700">SPLUNK MCP INTEGRATION</text>
-  <text x="400" y="1100" fill="#94a3b8" font-size="9">initialize → tools/list → tools/call (splunk_run_query)</text>
-  <text x="400" y="1116" fill="#94a3b8" font-size="9">Encrypted token auth from Splunk MCP Server admin page</text>
-  <text x="400" y="1132" fill="#94a3b8" font-size="9">Count queries append | stats count as count for accurate replay</text>
-  <text x="400" y="1148" fill="#94a3b8" font-size="9">MCPRestBridge implements tool names via REST when MCP unavailable</text>
-  <text x="400" y="1164" fill="#94a3b8" font-size="9">Live analytics: service distribution, error rates, index volumes</text>
-
-  <text x="780" y="1080" fill="#c4b5fd" font-size="10" font-weight="700">AI INTEGRATION</text>
-  <text x="780" y="1100" fill="#94a3b8" font-size="9">8 deterministic pipeline agents — auditable, reproducible, testable</text>
-  <text x="780" y="1116" fill="#94a3b8" font-size="9">SignalSmith Mentor — natural language SPL + pipeline coaching</text>
-  <text x="780" y="1132" fill="#94a3b8" font-size="9">Session context: analysis ID, proposal, validation, index stats</text>
-  <text x="780" y="1148" fill="#94a3b8" font-size="9">43 automated tests including end-to-end validation loop</text>
-  <text x="780" y="1164" fill="#94a3b8" font-size="9">Revision Agent demonstrates true agentic ops — auto-fix on regression</text>
-
-  <text x="1160" y="1080" fill="#86efac" font-size="10" font-weight="700">IMPACT &amp; VALUE</text>
-  <text x="1160" y="1100" fill="#94a3b8" font-size="9">Measurable GB/day ingest reduction with byte estimates per policy</text>
-  <text x="1160" y="1116" fill="#94a3b8" font-size="9">Detection safety proofs before any production OTel rollout</text>
-  <text x="1160" y="1132" fill="#94a3b8" font-size="9">Shadow pattern: optimize on candidate, prove on SPL, deploy at source</text>
-  <text x="1160" y="1148" fill="#94a3b8" font-size="9">Works with Splunk Enterprise trial + Developer License</text>
-  <text x="1160" y="1164" fill="#94a3b8" font-size="9">Hackathon: Observability · Security · Platform · Best MCP Server</text>
-
-  <!-- Value prop box -->
-  <rect x="60" y="1188" width="1680" height="110" rx="10" fill="#1e293b" stroke="#334155"/>
-  <text x="900" y="1214" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="700">SignalSmith: Cut Splunk ingest cost without cutting incident coverage</text>
-  <text x="900" y="1238" text-anchor="middle" fill="#94a3b8" font-size="11">Read baseline → analyze with agents → apply to shadow candidate → replay detections via MCP → auto-revise if needed → human approve → export OTel YAML</text>
-  <text x="900" y="1262" text-anchor="middle" fill="#64748b" font-size="10">Apache 2.0 · Splunk Agentic Ops Hackathon · SignalSmith v3.0</text>
-  <text x="900" y="1284" text-anchor="middle" fill="#475569" font-size="9">Extended documentation: docs/ARCHITECTURE.md</text>
-
-  <!-- Connector lines from backend to splunk -->
-  <line x1="1125" y1="450" x2="1125" y2="504" stroke="#fb923c" stroke-width="2" marker-end="url(#arr-orange)"/>
-  <line x1="1255" y1="450" x2="1255" y2="504" stroke="#fb923c" stroke-width="2" marker-end="url(#arr-orange)"/>
-  <line x1="1377" y1="450" x2="1377" y2="504" stroke="#fb923c" stroke-width="2" marker-end="url(#arr-orange)"/>
+  <rect width="1920" height="1520" fill="url(#bg)"/>
+
+  <!-- ═══ HEADER ═══ -->
+  <text x="960" y="56" text-anchor="middle" fill="#f8fafc" font-size="32" font-weight="700">SignalSmith AI</text>
+  <text x="960" y="88" text-anchor="middle" fill="#94a3b8" font-size="15">System Architecture — Agentic Splunk Telemetry Optimization</text>
+  <text x="960" y="114" text-anchor="middle" fill="#64748b" font-size="12">Shadow validation · Splunk MCP Server · Multi-agent pipeline · Human-governed OTel export</text>
+
+  <!-- Badges -->
+  <g transform="translate(560,132)">
+    <rect width="120" height="28" rx="14" fill="#1e3a5f" stroke="#3b82f6"/>
+    <text x="60" y="18" text-anchor="middle" fill="#93c5fd" font-size="11" font-weight="600">Observability</text>
+  </g>
+  <g transform="translate(696,132)">
+    <rect width="88" height="28" rx="14" fill="#3b1f1f" stroke="#ef4444"/>
+    <text x="44" y="18" text-anchor="middle" fill="#fca5a5" font-size="11" font-weight="600">Security</text>
+  </g>
+  <g transform="translate(800,132)">
+    <rect width="168" height="28" rx="14" fill="#2e1f4a" stroke="#a78bfa"/>
+    <text x="84" y="18" text-anchor="middle" fill="#c4b5fd" font-size="11" font-weight="600">Platform &amp; Dev Experience</text>
+  </g>
+  <g transform="translate(984,132)">
+    <rect width="156" height="28" rx="14" fill="#431407" stroke="#f97316"/>
+    <text x="78" y="18" text-anchor="middle" fill="#fdba74" font-size="11" font-weight="600">Splunk MCP Server</text>
+  </g>
+
+  <!-- ═══ TIER 1: SYSTEM OVERVIEW ═══ -->
+  <text x="64" y="196" fill="#64748b" font-size="12" font-weight="700" letter-spacing="1.2">SYSTEM OVERVIEW</text>
+  <line x1="64" y1="206" x2="1856" y2="206" stroke="#334155" stroke-width="1"/>
+
+  <!-- Operator -->
+  <rect x="64" y="228" width="280" height="300" rx="16" fill="#1e293b" stroke="#64748b" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="204" y="262" text-anchor="middle" fill="#94a3b8" font-size="11" font-weight="700" letter-spacing="1">OPERATOR</text>
+  <rect x="96" y="280" width="216" height="80" rx="10" fill="#334155"/>
+  <text x="204" y="312" text-anchor="middle" fill="#f1f5f9" font-size="14" font-weight="600">Browser</text>
+  <text x="204" y="334" text-anchor="middle" fill="#94a3b8" font-size="12">localhost:8080</text>
+  <text x="204" y="352" text-anchor="middle" fill="#64748b" font-size="11">Splunk credential login</text>
+  <text x="96" y="392" fill="#64748b" font-size="11">• X-Splunk-User header</text>
+  <text x="96" y="412" fill="#64748b" font-size="11">• X-Splunk-Pass header</text>
+  <text x="96" y="432" fill="#64748b" font-size="11">• Session state in UI</text>
+  <text x="96" y="468" fill="#64748b" font-size="11">• Run pipeline · approve</text>
+  <text x="96" y="488" fill="#64748b" font-size="11">• Mentor chat · export</text>
+
+  <line x1="344" y1="378" x2="384" y2="378" stroke="#60a5fa" stroke-width="3" marker-end="url(#a-blue)"/>
+
+  <!-- SignalSmith Platform -->
+  <rect x="384" y="228" width="720" height="300" rx="16" fill="#111827" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+  <text x="744" y="262" text-anchor="middle" fill="#93c5fd" font-size="13" font-weight="700" letter-spacing="1">SIGNALSMITH PLATFORM · Port 8080</text>
+
+  <rect x="416" y="284" width="320" height="220" rx="12" fill="#0f172a" stroke="#3b82f6" stroke-width="1"/>
+  <text x="576" y="312" text-anchor="middle" fill="#93c5fd" font-size="12" font-weight="600">FRONTEND · React / Vite</text>
+  <rect x="436" y="328" width="130" height="36" rx="8" fill="url(#blue)"/>
+  <text x="501" y="350" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">SessionContext</text>
+  <rect x="576" y="328" width="140" height="36" rx="8" fill="url(#blue)"/>
+  <text x="646" y="350" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">REST Client</text>
+  <rect x="436" y="376" width="96" height="32" rx="6" fill="#1e293b" stroke="#475569"/>
+  <text x="484" y="396" text-anchor="middle" fill="#e2e8f0" font-size="9">Command Center</text>
+  <rect x="540" y="376" width="80" height="32" rx="6" fill="#1e293b" stroke="#475569"/>
+  <text x="580" y="396" text-anchor="middle" fill="#e2e8f0" font-size="9">Data Flow</text>
+  <rect x="628" y="376" width="72" height="32" rx="6" fill="#1e293b" stroke="#475569"/>
+  <text x="664" y="396" text-anchor="middle" fill="#e2e8f0" font-size="9">Pipeline</text>
+  <rect x="708" y="376" width="80" height="32" rx="6" fill="#1e293b" stroke="#475569"/>
+  <text x="748" y="396" text-anchor="middle" fill="#e2e8f0" font-size="9">Validation</text>
+  <rect x="436" y="416" width="72" height="32" rx="6" fill="#4c1d95" stroke="#a78bfa"/>
+  <text x="472" y="436" text-anchor="middle" fill="#ede9fe" font-size="9" font-weight="600">Mentor</text>
+  <rect x="516" y="416" width="72" height="32" rx="6" fill="#1e293b" stroke="#475569"/>
+  <text x="552" y="436" text-anchor="middle" fill="#e2e8f0" font-size="9">Approval</text>
+  <rect x="596" y="416" width="72" height="32" rx="6" fill="#1e293b" stroke="#475569"/>
+  <text x="632" y="436" text-anchor="middle" fill="#e2e8f0" font-size="9">Settings</text>
+  <rect x="676" y="416" width="60" height="32" rx="6" fill="#1e293b" stroke="#475569"/>
+  <text x="706" y="436" text-anchor="middle" fill="#e2e8f0" font-size="9">MCP</text>
+  <text x="436" y="472" fill="#64748b" font-size="10">Live charts · coverage tables · OTel preview</text>
+
+  <rect x="752" y="284" width="332" height="220" rx="12" fill="#0f172a" stroke="#14b8a6" stroke-width="1"/>
+  <text x="918" y="312" text-anchor="middle" fill="#5eead4" font-size="12" font-weight="600">BACKEND · FastAPI / Python</text>
+  <rect x="772" y="328" width="140" height="40" rx="8" fill="url(#teal)"/>
+  <text x="842" y="346" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">REST API</text>
+  <text x="842" y="360" text-anchor="middle" fill="#ccfbf1" font-size="8">/api/*</text>
+  <rect x="924" y="328" width="148" height="40" rx="8" fill="url(#teal)"/>
+  <text x="998" y="346" text-anchor="middle" fill="#fff" font-size="10" font-weight="600">Orchestrator</text>
+  <text x="998" y="360" text-anchor="middle" fill="#ccfbf1" font-size="8">8 agents</text>
+  <rect x="772" y="380" width="100" height="32" rx="6" fill="#1e293b" stroke="#475569"/>
+  <text x="822" y="400" text-anchor="middle" fill="#cbd5e1" font-size="9">MCPClient</text>
+  <rect x="882" y="380" width="100" height="32" rx="6" fill="#1e293b" stroke="#475569"/>
+  <text x="932" y="400" text-anchor="middle" fill="#cbd5e1" font-size="9">SplunkClient</text>
+  <rect x="992" y="380" width="80" height="32" rx="6" fill="#1e293b" stroke="#475569"/>
+  <text x="1032" y="400" text-anchor="middle" fill="#cbd5e1" font-size="9">Storage</text>
+  <rect x="772" y="422" width="148" height="32" rx="6" fill="#1e293b" stroke="#475569"/>
+  <text x="846" y="442" text-anchor="middle" fill="#cbd5e1" font-size="9">SQLite + JSON events</text>
+  <rect x="932" y="422" width="140" height="32" rx="6" fill="#1e293b" stroke="#a78bfa"/>
+  <text x="1002" y="442" text-anchor="middle" fill="#c4b5fd" font-size="9">GeminiService</text>
+  <text x="772" y="478" fill="#64748b" font-size="10">Job runner · audit trail · OTel export</text>
+
+  <line x1="1104" y1="378" x2="1144" y2="378" stroke="#fb923c" stroke-width="3" marker-end="url(#a-orange)"/>
+
+  <!-- Splunk -->
+  <rect x="1144" y="228" width="712" height="300" rx="16" fill="#111827" stroke="#f97316" stroke-width="2" filter="url(#shadow)"/>
+  <text x="1500" y="262" text-anchor="middle" fill="#fdba74" font-size="13" font-weight="700" letter-spacing="1">SPLUNK ENTERPRISE</text>
+
+  <rect x="1176" y="284" width="148" height="56" rx="10" fill="url(#orange)"/>
+  <text x="1250" y="308" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">MCP Server</text>
+  <text x="1250" y="326" text-anchor="middle" fill="#ffedd5" font-size="9">:8090 JSON-RPC</text>
+  <rect x="1336" y="284" width="132" height="56" rx="10" fill="url(#orange)"/>
+  <text x="1402" y="308" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">REST API</text>
+  <text x="1402" y="326" text-anchor="middle" fill="#ffedd5" font-size="9">:8089 oneshot</text>
+  <rect x="1480" y="284" width="108" height="56" rx="10" fill="url(#orange)"/>
+  <text x="1534" y="308" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">HEC</text>
+  <text x="1534" y="326" text-anchor="middle" fill="#ffedd5" font-size="9">:8088 ingest</text>
+  <rect x="1600" y="284" width="224" height="56" rx="10" fill="#292524" stroke="#78716c"/>
+  <text x="1712" y="304" text-anchor="middle" fill="#d6d3d1" font-size="10" font-weight="600">Modes</text>
+  <text x="1612" y="322" fill="#a8a29e" font-size="9">splunk_mcp → splunk_api → offline</text>
+
+  <rect x="1176" y="360" width="316" height="140" rx="12" fill="#431407" stroke="#fb923c" stroke-width="1.5"/>
+  <text x="1334" y="392" text-anchor="middle" fill="#fed7aa" font-size="13" font-weight="700">Baseline Index</text>
+  <text x="1192" y="418" fill="#fdba74" font-size="11">READ ONLY — source telemetry</text>
+  <text x="1192" y="440" fill="#a8a29e" font-size="10">Bootstrap export · validation baseline</text>
+  <text x="1192" y="460" fill="#a8a29e" font-size="10">Live analytics · never modified</text>
+  <text x="1192" y="480" fill="#78716c" font-size="9">Any Splunk index via .env</text>
+
+  <rect x="1512" y="360" width="312" height="140" rx="12" fill="#431407" stroke="#fb923c" stroke-width="1.5"/>
+  <text x="1668" y="392" text-anchor="middle" fill="#fed7aa" font-size="13" font-weight="700">Candidate Index</text>
+  <text x="1528" y="418" fill="#fdba74" font-size="11">SHADOW — post-policy telemetry</text>
+  <text x="1528" y="440" fill="#a8a29e" font-size="10">PolicyEngine output ingested here</text>
+  <text x="1528" y="460" fill="#a8a29e" font-size="10">Validation replay target</text>
+  <text x="1528" y="480" fill="#78716c" font-size="9">Safe experimentation only</text>
+
+  <!-- ═══ TIER 2: AGENT PIPELINE ═══ -->
+  <text x="64" y="572" fill="#64748b" font-size="12" font-weight="700" letter-spacing="1.2">MULTI-AGENT PIPELINE</text>
+  <line x1="64" y1="582" x2="1856" y2="582" stroke="#334155" stroke-width="1"/>
+
+  <rect x="64" y="604" width="1792" height="148" rx="16" fill="#0f172a" stroke="#2dd4bf" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="96" y="636" fill="#5eead4" font-size="12" font-weight="600">Deterministic · auditable · human gates on policy + approval</text>
+
+  <!-- 8 agents evenly spaced -->
+  <g id="agents">
+    <rect x="96" y="656" width="148" height="72" rx="10" fill="#134e4a" stroke="#2dd4bf"/>
+    <text x="170" y="682" text-anchor="middle" fill="#99f6e4" font-size="11" font-weight="700">1 · Discovery</text>
+    <text x="170" y="700" text-anchor="middle" fill="#5eead4" font-size="9">Indexes · SPL export</text>
+    <text x="170" y="716" text-anchor="middle" fill="#64748b" font-size="8">analyze</text>
+
+    <line x1="244" y1="692" x2="268" y2="692" stroke="#34d399" stroke-width="2.5" marker-end="url(#a-green)"/>
+
+    <rect x="268" y="656" width="148" height="72" rx="10" fill="#134e4a" stroke="#2dd4bf"/>
+    <text x="342" y="682" text-anchor="middle" fill="#99f6e4" font-size="11" font-weight="700">2 · Profiler</text>
+    <text x="342" y="700" text-anchor="middle" fill="#5eead4" font-size="9">Noise quantification</text>
+    <text x="342" y="716" text-anchor="middle" fill="#64748b" font-size="8">analyze</text>
+
+    <line x1="416" y1="692" x2="440" y2="692" stroke="#34d399" stroke-width="2.5" marker-end="url(#a-green)"/>
+
+    <rect x="440" y="656" width="148" height="72" rx="10" fill="#134e4a" stroke="#2dd4bf"/>
+    <text x="514" y="682" text-anchor="middle" fill="#99f6e4" font-size="11" font-weight="700">3 · Protection</text>
+    <text x="514" y="700" text-anchor="middle" fill="#5eead4" font-size="9">Detection mapping</text>
+    <text x="514" y="716" text-anchor="middle" fill="#64748b" font-size="8">analyze</text>
+
+    <line x1="588" y1="692" x2="612" y2="692" stroke="#34d399" stroke-width="2.5" marker-end="url(#a-green)"/>
+
+    <rect x="612" y="656" width="148" height="72" rx="10" fill="#134e4a" stroke="#2dd4bf"/>
+    <text x="686" y="682" text-anchor="middle" fill="#99f6e4" font-size="11" font-weight="700">4 · PolicyGen</text>
+    <text x="686" y="700" text-anchor="middle" fill="#5eead4" font-size="9">Drop · sample rules</text>
+    <text x="686" y="716" text-anchor="middle" fill="#fbbf24" font-size="8">human gate</text>
+
+    <line x1="760" y1="692" x2="784" y2="692" stroke="#34d399" stroke-width="2.5" marker-end="url(#a-green)"/>
+
+    <rect x="784" y="656" width="148" height="72" rx="10" fill="#134e4a" stroke="#2dd4bf"/>
+    <text x="858" y="682" text-anchor="middle" fill="#99f6e4" font-size="11" font-weight="700">5 · Engine</text>
+    <text x="858" y="700" text-anchor="middle" fill="#5eead4" font-size="9">Apply policies</text>
+    <text x="858" y="716" text-anchor="middle" fill="#64748b" font-size="8">apply</text>
+
+    <line x1="932" y1="692" x2="956" y2="692" stroke="#34d399" stroke-width="2.5" marker-end="url(#a-green)"/>
+
+    <rect x="956" y="656" width="148" height="72" rx="10" fill="#134e4a" stroke="#2dd4bf"/>
+    <text x="1030" y="682" text-anchor="middle" fill="#99f6e4" font-size="11" font-weight="700">6 · Validator</text>
+    <text x="1030" y="700" text-anchor="middle" fill="#5eead4" font-size="9">SPL shadow replay</text>
+    <text x="1030" y="716" text-anchor="middle" fill="#64748b" font-size="8">validate</text>
+
+    <line x1="1104" y1="692" x2="1128" y2="692" stroke="#34d399" stroke-width="2.5" marker-end="url(#a-green)"/>
+
+    <rect x="1128" y="656" width="148" height="72" rx="10" fill="#134e4a" stroke="#2dd4bf"/>
+    <text x="1202" y="682" text-anchor="middle" fill="#99f6e4" font-size="11" font-weight="700">7 · Revision</text>
+    <text x="1202" y="700" text-anchor="middle" fill="#5eead4" font-size="9">Auto-fix on FAIL</text>
+    <text x="1202" y="716" text-anchor="middle" fill="#fbbf24" font-size="8">human gate</text>
+
+    <rect x="1312" y="656" width="148" height="72" rx="10" fill="#4c1d95" stroke="#a78bfa"/>
+    <text x="1386" y="682" text-anchor="middle" fill="#ede9fe" font-size="11" font-weight="700">Mentor</text>
+    <text x="1386" y="700" text-anchor="middle" fill="#c4b5fd" font-size="9">SPL · coaching</text>
+    <text x="1386" y="716" text-anchor="middle" fill="#64748b" font-size="8">assist any phase</text>
+  </g>
+
+  <!-- Fail loop -->
+  <path d="M 1202 728 Q 1202 756 1030 756 Q 858 756 858 728" fill="none" stroke="#f87171" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#a-blue)"/>
+  <text x="1030" y="772" text-anchor="middle" fill="#f87171" font-size="9">coverage regression → revise → re-validate</text>
+
+  <!-- ═══ TIER 3: SHADOW VALIDATION ═══ -->
+  <text x="64" y="800" fill="#64748b" font-size="12" font-weight="700" letter-spacing="1.2">SHADOW VALIDATION</text>
+  <line x1="64" y1="810" x2="1856" y2="810" stroke="#334155" stroke-width="1"/>
+
+  <rect x="64" y="832" width="1792" height="160" rx="16" fill="#0f172a" stroke="#f97316" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="96" y="864" fill="#fdba74" font-size="12" font-weight="600">Real SPL hit counts via MCP — baseline vs candidate — any custom detections</text>
+
+  <rect x="96" y="884" width="240" height="88" rx="12" fill="#431407" stroke="#fb923c"/>
+  <text x="216" y="914" text-anchor="middle" fill="#fed7aa" font-size="12" font-weight="600">Baseline Replay</text>
+  <text x="216" y="936" text-anchor="middle" fill="#fdba74" font-size="10">Original index hit count</text>
+  <text x="216" y="956" text-anchor="middle" fill="#a8a29e" font-size="9">SPL + stats count</text>
+
+  <line x1="336" y1="928" x2="400" y2="928" stroke="#34d399" stroke-width="2.5" marker-end="url(#a-green)"/>
+
+  <rect x="400" y="884" width="280" height="88" rx="12" fill="#1e293b" stroke="#14b8a6" stroke-width="1.5"/>
+  <text x="540" y="914" text-anchor="middle" fill="#5eead4" font-size="12" font-weight="600">ReplayValidator</text>
+  <text x="540" y="936" text-anchor="middle" fill="#94a3b8" font-size="10">Compare per saved search</text>
+  <text x="540" y="956" text-anchor="middle" fill="#94a3b8" font-size="9">PASS if candidate ≥ baseline hits</text>
+
+  <line x1="680" y1="928" x2="744" y2="928" stroke="#34d399" stroke-width="2.5" marker-end="url(#a-green)"/>
+
+  <rect x="744" y="884" width="240" height="88" rx="12" fill="#431407" stroke="#fb923c"/>
+  <text x="864" y="914" text-anchor="middle" fill="#fed7aa" font-size="12" font-weight="600">Candidate Replay</text>
+  <text x="864" y="936" text-anchor="middle" fill="#fdba74" font-size="10">Shadow index hit count</text>
+  <text x="864" y="956" text-anchor="middle" fill="#a8a29e" font-size="9">Post-policy telemetry</text>
+
+  <rect x="1024" y="892" width="800" height="72" rx="10" fill="#14532d" stroke="#4ade80" stroke-width="1"/>
+  <text x="1044" y="916" fill="#bbf7d0" font-size="11" font-weight="600">Detections (any SPL via config/detections.json or Splunk MCP discovery)</text>
+  <text x="1044" y="938" fill="#86efac" font-size="10">Payment Outage · HTTP 5xx · Credential Stuffing · Slow API · Privileged Login · + your custom SPL</text>
+  <text x="1044" y="956" fill="#86efac" font-size="10">Works with application logs · security · Kubernetes · NetOps · any Splunk index</text>
+
+  <!-- ═══ TIER 4: END-TO-END FLOW ═══ -->
+  <text x="64" y="1028" fill="#64748b" font-size="12" font-weight="700" letter-spacing="1.2">END-TO-END PIPELINE</text>
+  <line x1="64" y1="1038" x2="1856" y2="1038" stroke="#334155" stroke-width="1"/>
+
+  <rect x="64" y="1060" width="1792" height="100" rx="16" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- 8 steps with even spacing -->
+  <g font-size="10" font-weight="600">
+    <rect x="96" y="1084" width="120" height="56" rx="10" fill="#334155" stroke="#64748b"/>
+    <text x="156" y="1108" text-anchor="middle" fill="#f1f5f9">Bootstrap</text>
+    <text x="156" y="1126" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="400">SPL → JSON</text>
+    <line x1="216" y1="1112" x2="244" y2="1112" stroke="#34d399" stroke-width="2.5" marker-end="url(#a-green)"/>
+
+    <rect x="244" y="1084" width="120" height="56" rx="10" fill="#334155" stroke="#64748b"/>
+    <text x="304" y="1108" text-anchor="middle" fill="#f1f5f9">Analyze</text>
+    <text x="304" y="1126" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="400">4 agents</text>
+    <line x1="364" y1="1112" x2="392" y2="1112" stroke="#34d399" stroke-width="2.5" marker-end="url(#a-green)"/>
+
+    <rect x="392" y="1084" width="120" height="56" rx="10" fill="#334155" stroke="#64748b"/>
+    <text x="452" y="1108" text-anchor="middle" fill="#f1f5f9">Apply</text>
+    <text x="452" y="1126" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="400">policies</text>
+    <line x1="512" y1="1112" x2="540" y2="1112" stroke="#34d399" stroke-width="2.5" marker-end="url(#a-green)"/>
+
+    <rect x="540" y="1084" width="120" height="56" rx="10" fill="#334155" stroke="#64748b"/>
+    <text x="600" y="1108" text-anchor="middle" fill="#f1f5f9">Ingest</text>
+    <text x="600" y="1126" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="400">candidate</text>
+    <line x1="660" y1="1112" x2="688" y2="1112" stroke="#34d399" stroke-width="2.5" marker-end="url(#a-green)"/>
+
+    <rect x="688" y="1084" width="120" height="56" rx="10" fill="#334155" stroke="#64748b"/>
+    <text x="748" y="1108" text-anchor="middle" fill="#f1f5f9">Validate</text>
+    <text x="748" y="1126" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="400">SPL replay</text>
+    <line x1="808" y1="1112" x2="836" y2="1112" stroke="#34d399" stroke-width="2.5" marker-end="url(#a-green)"/>
+
+    <rect x="836" y="1084" width="120" height="56" rx="10" fill="#334155" stroke="#64748b"/>
+    <text x="896" y="1108" text-anchor="middle" fill="#f1f5f9">Revise</text>
+    <text x="896" y="1126" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="400">if FAIL</text>
+    <line x1="956" y1="1112" x2="984" y2="1112" stroke="#34d399" stroke-width="2.5" marker-end="url(#a-green)"/>
+
+    <rect x="984" y="1084" width="120" height="56" rx="10" fill="#334155" stroke="#64748b"/>
+    <text x="1044" y="1108" text-anchor="middle" fill="#f1f5f9">Approve</text>
+    <text x="1044" y="1126" text-anchor="middle" fill="#94a3b8" font-size="9" font-weight="400">human</text>
+    <line x1="1104" y1="1112" x2="1132" y2="1112" stroke="#34d399" stroke-width="2.5" marker-end="url(#a-green)"/>
+
+    <rect x="1132" y="1084" width="140" height="56" rx="10" fill="#14532d" stroke="#4ade80" stroke-width="1.5"/>
+    <text x="1202" y="1108" text-anchor="middle" fill="#bbf7d0">OTel YAML</text>
+    <text x="1202" y="1126" text-anchor="middle" fill="#86efac" font-size="9" font-weight="400">collector export</text>
+  </g>
+
+  <text x="1300" y="1112" fill="#64748b" font-size="11">POST /api/session/run orchestrates all phases</text>
+
+  <!-- ═══ TIER 5: GOVERNANCE + LEGEND ═══ -->
+  <text x="64" y="1196" fill="#64748b" font-size="12" font-weight="700" letter-spacing="1.2">GOVERNANCE &amp; LEGEND</text>
+  <line x1="64" y1="1206" x2="1856" y2="1206" stroke="#334155" stroke-width="1"/>
+
+  <rect x="64" y="1228" width="560" height="200" rx="16" fill="#052e16" stroke="#22c55e" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="344" y="1260" text-anchor="middle" fill="#bbf7d0" font-size="13" font-weight="700">Governance &amp; Safety</text>
+  <text x="88" y="1292" fill="#86efac" font-size="11">No auto-deploy — human approval before OTel export</text>
+  <text x="88" y="1316" fill="#86efac" font-size="11">Full audit trail in SQLite for every agent action</text>
+  <text x="88" y="1340" fill="#86efac" font-size="11">Production indexes never modified — shadow-only</text>
+  <text x="88" y="1364" fill="#86efac" font-size="11">Rollback YAML generated with collector config</text>
+  <text x="88" y="1396" fill="#64748b" font-size="10">Apache 2.0 · Splunk Agentic Ops Hackathon</text>
+
+  <rect x="648" y="1228" width="560" height="200" rx="16" fill="#0f172a" stroke="#334155" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="928" y="1260" text-anchor="middle" fill="#e2e8f0" font-size="13" font-weight="700">Data Flow Legend</text>
+  <line x1="688" y1="1292" x2="736" y2="1292" stroke="#60a5fa" stroke-width="3" marker-end="url(#a-blue)"/>
+  <text x="748" y="1296" fill="#94a3b8" font-size="11">REST API (UI → Backend)</text>
+  <line x1="688" y1="1320" x2="736" y2="1320" stroke="#fb923c" stroke-width="3" marker-end="url(#a-orange)"/>
+  <text x="748" y="1324" fill="#94a3b8" font-size="11">Splunk query / ingest</text>
+  <line x1="688" y1="1348" x2="736" y2="1348" stroke="#34d399" stroke-width="3" marker-end="url(#a-green)"/>
+  <text x="748" y="1352" fill="#94a3b8" font-size="11">Pipeline phase progression</text>
+  <line x1="688" y1="1376" x2="736" y2="1376" stroke="#a78bfa" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#a-purple)"/>
+  <text x="748" y="1380" fill="#94a3b8" font-size="11">Mentor assist (optional)</text>
+
+  <rect x="1232" y="1228" width="624" height="200" rx="16" fill="#0f172a" stroke="#334155" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="1544" y="1260" text-anchor="middle" fill="#e2e8f0" font-size="13" font-weight="700">Key API Endpoints</text>
+  <text x="1256" y="1292" fill="#64748b" font-size="10" font-family="Consolas, monospace">POST /api/session/run · /session/bootstrap · /analysis/start</text>
+  <text x="1256" y="1316" fill="#64748b" font-size="10" font-family="Consolas, monospace">POST /api/proposals/{id}/apply · /validation/{id}/run</text>
+  <text x="1256" y="1340" fill="#64748b" font-size="10" font-family="Consolas, monospace">POST /api/ai/chat · GET /splunk/analytics/live</text>
+  <text x="1256" y="1364" fill="#64748b" font-size="10" font-family="Consolas, monospace">POST /api/proposals/{id}/approve · GET /export/otel</text>
+  <text x="1256" y="1396" fill="#475569" font-size="10">43 automated tests · CI on push</text>
+
+  <!-- Footer -->
+  <rect x="64" y="1456" width="1792" height="48" rx="12" fill="#1e293b" stroke="#334155"/>
+  <text x="960" y="1486" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="600">Cut Splunk ingest cost without cutting incident coverage</text>
 </svg>

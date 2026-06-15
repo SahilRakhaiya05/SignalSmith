@@ -13,7 +13,7 @@ Works with **any Splunk workload**: application logs, security alerts, Kubernete
 
 **Built for:** [Splunk Agentic Ops Hackathon](https://splunk.devpost.com/) — Observability · Security · Platform & Developer Experience
 
-![SignalSmith system architecture](architecture.svg)
+![SignalSmith system architecture](signalsmith_architecture.svg)
 
 ---
 
@@ -112,7 +112,7 @@ SignalSmith runs as a single application on **port 8080** — React dashboard an
 | **Splunk** | MCP Server · REST · HEC | Query, ingest, saved-search replay |
 | **AI assist** | SignalSmith Mentor | Natural-language SPL and session-aware coaching |
 
-Full diagram: [architecture.svg](architecture.svg) · Detailed design: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
+Full diagram: [signalsmith_architecture.svg](signalsmith_architecture.svg) · Detailed design: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 
 ---
 
@@ -407,7 +407,8 @@ Authentication: Splunk credentials via `X-Splunk-User` and `X-Splunk-Pass` heade
 
 ```
 signalsmith-ai/
-├── architecture.svg          # System architecture diagram (repo root)
+├── signalsmith_architecture.svg  # System architecture diagram (repo root)
+├── architecture.svg              # Same diagram (Devpost alias)
 ├── LICENSE                   # Apache 2.0
 ├── README.md                 # This file
 ├── .env.example              # Environment template
@@ -474,7 +475,7 @@ make test    # Linux / macOS
 | [docs/SECURITY.md](docs/SECURITY.md) | Credentials, governance, production notes |
 | [config/README.md](config/README.md) | Custom detections and any Splunk workload |
 | [scripts/README.md](scripts/README.md) | Setup, start, and MCP install scripts |
-| [architecture.svg](architecture.svg) | Full system diagram |
+| [signalsmith_architecture.svg](signalsmith_architecture.svg) | Full system diagram |
 
 **Splunk Agentic Ops Hackathon submission:** [docs/SUBMISSION.md](docs/SUBMISSION.md)
 
