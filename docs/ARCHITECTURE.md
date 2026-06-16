@@ -2,8 +2,6 @@
 
 SignalSmith is an agentic telemetry optimization platform. It reads Splunk baseline telemetry, runs a multi-agent analysis pipeline, applies reduction policies to a **shadow candidate** index, validates detection coverage, and exports OpenTelemetry collector YAML after human approval.
 
-**Devpost diagram:** [architecture.svg](../architecture.svg) at repo root (1800×1350, six layers, full legend)
-
 **Related docs:** [README.md](README.md) · [TECHNICAL_DESIGN.md](TECHNICAL_DESIGN.md) · [SPLUNK_SETUP.md](SPLUNK_SETUP.md)
 
 ---
