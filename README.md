@@ -13,6 +13,9 @@ Works with **any Splunk workload**: application logs, security alerts, Kubernete
 
 **Built for:** [Splunk Agentic Ops Hackathon](https://splunk.devpost.com/) — Observability · Security · Platform & Developer Experience
 
+- [ARCHITECTURE.md](https://github.com/SahilRakhaiya05/SignalSmith/blob/main/docs/ARCHITECTURE.md)
+
+
 <img width="1200" height="2315" alt="SignalSmith system architecture" src="https://github.com/user-attachments/assets/f93493ea-fd61-48f1-bb9a-eb5a91d9bb44" />
 
 ---
